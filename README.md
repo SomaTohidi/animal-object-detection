@@ -1,49 +1,87 @@
-# Animal Object Detection using PyTorch
+# Animal Object Detection using YOLO and PyTorch
 
 This project implements an animal object detection system using deep learning with PyTorch.  
-The model is designed to detect and classify animals in images using a convolutional neural network-based approach.
+The model is based on the YOLO (You Only Look Once) object detection approach, which enables real-time detection and localization of animals in images.
 
-The project includes data preprocessing, model training, and prediction steps, all implemented in a Jupyter Notebook environment.
+The project covers the full deep learning pipeline including data preprocessing, model training, inference, and visualization of detection results.
 
 ---
 
-## Project Overview
+## Project Objective
 
-The goal of this project is to build an object detection pipeline that can:
+The goal of this project is to design and implement an automated animal detection system that can:
 
-- Load and preprocess image data
-- Train a deep learning model for animal detection
-- Perform inference on new images
-- Visualize detection results
+- Detect animals in images
+- Localize objects using bounding boxes
+- Classify detected animals
+- Perform fast and efficient inference
 
-The implementation is done using PyTorch and standard deep learning workflows.
+This system demonstrates practical application of modern object detection techniques in computer vision.
 
 ---
 
 ## Methodology
 
-The project follows a typical deep learning pipeline:
+The implementation follows a standard object detection workflow using YOLO architecture.
 
-1. **Data Preparation**
-   - Loading image data
-   - Preprocessing and transformations
-   - Preparing tensors for model input
+### 1. Data Preparation
 
-2. **Model Implementation**
-   - Deep neural network built using PyTorch
-   - Training loop with loss computation
-   - Optimization using gradient descent
+- Loading image datasets
+- Image resizing and normalization
+- Tensor conversion
+- Data transformation for model compatibility
+- Preparing inputs and labels for training
 
-3. **Model Training**
-   - Forward propagation
-   - Loss calculation
-   - Backpropagation
-   - Parameter updates
+Preprocessing ensures that the data is suitable for neural network training and improves model performance.
 
-4. **Evaluation & Prediction**
-   - Running inference on images
-   - Generating predictions
-   - Visualizing results
+---
+
+### 2. Model Architecture — YOLO
+
+The detection model is based on YOLO (You Only Look Once), a state-of-the-art real-time object detection algorithm.
+
+YOLO works by:
+
+- Dividing the image into a grid
+- Predicting bounding boxes for each grid cell
+- Estimating object confidence scores
+- Classifying detected objects
+
+Unlike traditional detection methods, YOLO performs detection in a single forward pass, making it extremely fast and efficient.
+
+---
+
+### 3. Model Training
+
+The training process includes:
+
+- Forward propagation through the network
+- Bounding box prediction
+- Loss computation (localization + classification)
+- Backpropagation
+- Weight optimization using gradient descent
+
+Training is performed iteratively to minimize detection error and improve prediction accuracy.
+
+---
+
+### 4. Inference and Detection
+
+After training, the model performs inference on unseen images:
+
+- Predicts bounding boxes
+- Assigns class labels
+- Filters predictions using confidence thresholds
+- Applies detection visualization
+
+The output is an image with detected animals highlighted.
+
+---
+
+### 5. Visualization
+
+Detection results are visualized using bounding boxes drawn around detected animals.  
+This allows easy interpretation of model predictions.
 
 ---
 
@@ -51,6 +89,7 @@ The project follows a typical deep learning pipeline:
 
 - Python
 - PyTorch
+- YOLO object detection framework
 - Torchvision
 - NumPy
 - Matplotlib
@@ -58,14 +97,23 @@ The project follows a typical deep learning pipeline:
 
 ---
 
-## Repository Contents
+## Repository Structure
 
-- `AnimalObjectDetectionProject_Soma-Tohidinia.ipynb`  
-  Main notebook containing full implementation including preprocessing, training, and prediction.
+```
+AnimalObjectDetectionProject_Soma-Tohidinia.ipynb
+```
+
+Contains full implementation:
+
+- Data preprocessing
+- Model definition
+- Training loop
+- Prediction pipeline
+- Visualization
 
 ---
 
-## How to Run
+## How to Run the Project
 
 ### 1. Install dependencies
 
@@ -73,19 +121,48 @@ The project follows a typical deep learning pipeline:
 pip install torch torchvision matplotlib numpy jupyter
 ```
 
+---
+
 ### 2. Launch Jupyter Notebook
 
 ```bash
 jupyter notebook
 ```
 
-### 3. Open and run
+---
+
+### 3. Run the notebook
+
+Open:
 
 ```
 AnimalObjectDetectionProject_Soma-Tohidinia.ipynb
 ```
 
-Run all cells step by step.
+Execute cells sequentially.
+
+---
+
+## Key Features
+
+✔ Real-time object detection  
+✔ YOLO-based architecture  
+✔ Bounding box localization  
+✔ Image preprocessing pipeline  
+✔ Training and inference workflow  
+✔ Prediction visualization  
+
+---
+
+## Applications
+
+This system can be used in:
+
+- Wildlife monitoring
+- Smart surveillance systems
+- Environmental research
+- Automated animal recognition
+- Computer vision research
 
 ---
 
@@ -97,7 +174,6 @@ GitHub: https://github.com/SomaTohidi
 
 ---
 
-## Notes
+## Project Type
 
-This project was developed as part of a deep learning / computer vision assignment.  
-It demonstrates the full workflow of building an object detection model using PyTorch.
+Academic deep learning / computer vision project demonstrating practical implementation of YOLO-based object detection using PyTorch.
